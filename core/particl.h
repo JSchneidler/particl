@@ -1,23 +1,26 @@
 #ifndef PARTICL_PARTICL_H
 #define PARTICL_PARTICL_H
+#include "vector2.h"
 #include <cstdint>
 
-constexpr unsigned NUM_PARTICLES = 10000;
-constexpr unsigned WIDTH = 700;
-constexpr unsigned HEIGHT = 400;
-// constexpr unsigned WIDTH = 64;
-// constexpr unsigned HEIGHT = 64;
-
+constexpr unsigned NUM_PARTICLES = 1000;
+// constexpr unsigned WIDTH = 700;
+// constexpr unsigned HEIGHT = 400;
+constexpr unsigned WIDTH = 64;
+constexpr unsigned HEIGHT = 64;
 
 struct Particle {
-    float x, y;
-    float vx, vy;
+    Vector2 pos;
+    Vector2 vel;
     float elasticity;
-    uint64_t age = 0;
+    float drag;
+    float age = 0;
 
     struct {
         uint8_t r, g, b, a;
     } color;
+
+    int16_t next_in_cell = -1;
 };
 
 

@@ -1,4 +1,8 @@
 #include "renderer.h"
+
+#include <cmath>
+#include <cstring>
+
 #include "particl.h"
 
 static uint8_t pixels[WIDTH * HEIGHT * 4] = {0};
@@ -13,8 +17,8 @@ void updateSprite(sf::Texture &texture) {
     Particle *particles = Particl::getParticles();
     for (int i = 0; i < NUM_PARTICLES; i++) {
         Particle &p = particles[i];
-        int x = static_cast<int>(round(p.x));
-        int y = static_cast<int>(round(p.y));
+        int x = static_cast<int>(round(p.pos.x));
+        int y = static_cast<int>(round(p.pos.y));
         if (x < 0 || x >= WIDTH || y < 0 || y >= HEIGHT)
             continue;
 

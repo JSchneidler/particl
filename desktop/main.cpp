@@ -1,9 +1,11 @@
+#include <cmath>
+
 #include "particl.h"
 #include "renderer.h"
 #include <SFML/Graphics.hpp>
 
-constexpr unsigned SCALE = 2;
-// constexpr unsigned SCALE = 10;
+// constexpr unsigned SCALE = 2;
+constexpr unsigned SCALE = 15;
 
 
 int main() {
@@ -37,10 +39,8 @@ int main() {
                     particl.gravity_direction += 15;
                 else if (keyPressed->scancode == sf::Keyboard::Scan::Up)
                     particl.gravity_force += 10;
-                    // particl.gravity_direction = 270;
                 else if (keyPressed->scancode == sf::Keyboard::Scan::Down)
                     particl.gravity_force -= 10;
-                    // particl.gravity_direction = 90;
             }
         }
 

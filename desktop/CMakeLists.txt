@@ -18,5 +18,7 @@ add_executable(particl main.cpp
         ../core/particl.h
         renderer.cpp
         renderer.h
+        ../core/Vector2.cpp
+        ../core/vector2.h
 )
 target_link_libraries(particl PRIVATE SFML::Graphics)
