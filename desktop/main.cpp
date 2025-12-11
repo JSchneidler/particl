@@ -24,7 +24,7 @@ int main() {
     text.setFillColor(sf::Color::White);
     float fps = 0;
 
-    sf::RectangleShape line({50.f, 5.f});
+    sf::RectangleShape line({50, 5});
     line.setFillColor(sf::Color::Red);
     line.setPosition({50, 150});
 
@@ -38,9 +38,9 @@ int main() {
                 else if (keyPressed->scancode == sf::Keyboard::Scan::Right)
                     particl.gravity_direction += 15;
                 else if (keyPressed->scancode == sf::Keyboard::Scan::Up)
-                    particl.gravity_force += 10;
+                    particl.gravity_force += 100;
                 else if (keyPressed->scancode == sf::Keyboard::Scan::Down)
-                    particl.gravity_force -= 10;
+                    particl.gravity_force -= 100;
             }
         }
 

@@ -10,8 +10,8 @@ constexpr unsigned WIDTH = 64;
 constexpr unsigned HEIGHT = 64;
 
 struct Particle {
-    Vector2 pos;
-    Vector2 vel;
+    Vector2 pos {0, 0};
+    Vector2 pos_old {0, 0};
     float elasticity;
     float drag;
     float age = 0;
@@ -27,7 +27,7 @@ struct Particle {
 class Particl {
 public:
     float gravity_direction = 90;
-    float gravity_force = 100;
+    float gravity_force = 1000;
 
     Particl();
 
